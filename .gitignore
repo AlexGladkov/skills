@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+secrets.json
+radarr_api_key
+mcp_token
+.DS_Store

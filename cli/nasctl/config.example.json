@@ -1,0 +1,12 @@
+{
+  "run_uid": 999,
+  "radarr_url": "http://192.168.1.47:7878",
+  "root_folder": "/data/media/movies",
+  "quality_profile_id": 4,
+  "resolution": 1080,
+  "allowed_sources": ["webdl", "webrip", "bluray"],
+  "audio_title_pattern": "rus|russian|рус|dub.*MovieDalen",
+  "max_size_bytes": 25000000000,
+  "min_free_bytes": 50000000000,
+  "max_queue_items": 3
+}

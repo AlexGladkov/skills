@@ -1,0 +1,6 @@
+**/__pycache__
+**/.venv
+**/.env
+**/secrets.json
+**/radarr_api_key
+**/mcp_token

@@ -1,0 +1,27 @@
+services:
+  nas-mcp:
+    build:
+      context: ../..
+      dockerfile: mcp/nas/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${NAS_BIND_IP:?Set NAS_BIND_IP}:8765:8000"
+    read_only: true
+    user: "10001:10001"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    pids_limit: 64
+    mem_limit: 256m
+    cpus: 1.0
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid
+    volumes:
+      - ${NAS_CONFIG_DIR:?Set NAS_CONFIG_DIR}/config.json:/config/config.json:ro
+    secrets:
+      - radarr_api_key
+      - mcp_token
+secrets:
+  radarr_api_key:
+    file: ${NAS_CONFIG_DIR}/radarr_api_key
+  mcp_token:
+    file: ${NAS_CONFIG_DIR}/mcp_token
